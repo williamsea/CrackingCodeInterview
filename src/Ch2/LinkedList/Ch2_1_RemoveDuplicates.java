@@ -12,6 +12,8 @@ public class Ch2_1_RemoveDuplicates {
 		for(int i=0; i<n; i++){
 			curr.next = new Node(i);
 			curr = curr.next;
+			curr.next = new Node(i);
+			curr = curr.next;
 		}
 		
 		curr = head;
@@ -21,15 +23,22 @@ public class Ch2_1_RemoveDuplicates {
 		}
 		System.out.print('\n');
 		
-		removeDuplicate(head);
+//		removeDuplicate(head);
+		removeDuplicateNoBuffer(head);
 		curr = head;
 		while(curr != null){
 			System.out.print(curr.data);
 			curr = curr.next;
 		}
+		
+		
 	}
 	
-	public static void removeDuplicate(Node n){
+	/**
+	 * Using HashSet
+	 * @param n
+	 */
+	public static void removeDuplicate(Node n){//put the head in
 		HashSet<Integer> set = new HashSet<Integer>();
 		Node prev = null;
 		while(n != null){
@@ -43,4 +52,28 @@ public class Ch2_1_RemoveDuplicates {
 			n=n.next;
 		}
 	}
+	
+	/**
+	 * Two pointers
+	 * No Buffer
+	 * @param head
+	 */
+	public static void removeDuplicateNoBuffer(Node head){
+		Node curr, runner;
+		curr = head;
+		while(curr!=null){
+			runner = curr;
+			while(runner.next!=null){
+				if(runner.next.data == curr.data){
+					runner.next = runner.next.next;
+				}
+				else{
+					runner=runner.next;
+				}
+			}
+			curr = curr.next;
+		}
+	}
+	
+	
 }
