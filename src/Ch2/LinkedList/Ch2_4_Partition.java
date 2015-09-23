@@ -20,8 +20,15 @@ public class Ch2_4_Partition {
 		System.out.print('\n');
 		
 		int x=5;
-		head = partition(head, x);
-		curr = head;
+		curr = partition(head, x);
+		while(curr != null){
+			System.out.print(curr.data);
+			System.out.print('\t');
+			curr = curr.next;
+		}
+		System.out.print('\n');
+		
+		curr = partition2(head, x);
 		while(curr != null){
 			System.out.print(curr.data);
 			System.out.print('\t');
@@ -66,5 +73,26 @@ public class Ch2_4_Partition {
 		
 		smallRunner.next = largeStart;//connect small ending node and large starting node
 		return smallStart;
+	}
+	
+	public static Node partition2(Node node, int x){//Simpler
+		Node head = node;
+		Node tail = node;
+		
+		while(node!=null){
+			Node next = node.next;
+			if(node.data<x){
+				node.next = head;
+				head = node;
+			}
+			else{
+				tail.next = node;
+				tail = node;
+			}
+			node = next;
+		}
+		tail.next = null;
+		
+		return head;//the new head
 	}
 }
