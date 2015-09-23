@@ -25,7 +25,7 @@ public class Ch2_6_LoopBeginning {
 			if(slow == fast){
 				slow = head;
 				while(true){
-					if(slow==fast){
+					if(slow==fast){ 
 						return fast;
 					}
 					slow = slow.next;
