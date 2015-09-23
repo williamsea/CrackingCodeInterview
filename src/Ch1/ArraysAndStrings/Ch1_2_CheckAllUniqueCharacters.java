@@ -1,3 +1,4 @@
+package Ch1.ArraysAndStrings;
 public class Ch1_2_CheckAllUniqueCharacters {
 
 	private static boolean result1 = false;

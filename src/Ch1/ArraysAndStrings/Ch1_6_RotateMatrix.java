@@ -1,3 +1,4 @@
+package Ch1.ArraysAndStrings;
 public class Ch1_6_RotateMatrix {
 
 	public static void main(String args[]) {

@@ -1,3 +1,4 @@
+package Ch1.ArraysAndStrings;
 public class Ch1_7_SetZero {
 	public static void main(String args[]) {
 		int size = 5;
