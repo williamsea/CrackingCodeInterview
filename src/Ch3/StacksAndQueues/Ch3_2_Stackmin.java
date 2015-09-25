@@ -3,7 +3,7 @@ package Ch3.StacksAndQueues;
 import java.util.Stack;
 
 public class Ch3_2_Stackmin extends Stack<Integer>{//extends java.util.Stack
-	Stack<Integer> s; //store the min values
+	Stack<Integer> s; //extra stack stores the min values
 	public Ch3_2_Stackmin(){
 		s = new Stack<Integer>();
 	}
@@ -21,7 +21,9 @@ public class Ch3_2_Stackmin extends Stack<Integer>{//extends java.util.Stack
 		if(value <= min()){
 			s.push(value); //push the new min value if necessary
 		}
-		super.push(value);
+		super.push(value);//using the push() method which is not the override one in Stackmin, 
+						  //but the super one in Stack
+						  //though it is still pushed into myMinStack (Ch3_2_Stackmin)
 	}
 	
 	public Integer pop(){
