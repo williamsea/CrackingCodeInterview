@@ -1,7 +1,8 @@
 package Ch3.StacksAndQueues;
 
-public class Stack {
+public class Ch3_2_Stackmin {
 	Node top;
+	Object min;
 	
 	Object pop(){
 		if(top!=null){
@@ -12,7 +13,16 @@ public class Stack {
 		return null;
 	}
 	
-	void push(Object item){		
+	void push(Object item){
+		if(min == null){
+			min = item;
+		}
+		else{
+			if((int)item<(int)min){
+				min = item;
+			}
+		}	
+		
 		Node t = new Node(item);
 		t.next = top;
 		top = t;
@@ -20,5 +30,9 @@ public class Stack {
 	
 	Object peek(){
 		return top.data;
+	}
+	
+	Object min(){
+		return min;
 	}
 }
