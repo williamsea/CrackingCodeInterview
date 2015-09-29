@@ -5,12 +5,12 @@ import java.util.LinkedList;
 import Ch4.TreesAndGraphs.Ch4_2_CheckRoute.State;
 
 public class TreeNode {
-	TreeNode left = null;
-	TreeNode right = null;
+	public TreeNode left = null;
+	public TreeNode right = null;
 	Object data;
 	State state;
 	
-	TreeNode(Object val){
+	public TreeNode(Object val){
 		data = val;
 	}
 	
