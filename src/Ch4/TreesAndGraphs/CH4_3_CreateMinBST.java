@@ -1,4 +1,4 @@
-import Ch4.TreesAndGraphs.TreeNode;
+package Ch4.TreesAndGraphs;
 
 
 public class CH4_3_CreateMinBST {
