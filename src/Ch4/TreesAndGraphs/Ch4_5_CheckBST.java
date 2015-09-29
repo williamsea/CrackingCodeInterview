@@ -14,7 +14,7 @@ public class Ch4_5_CheckBST {
 		}
 		if( (!checkBST(n.left, min, (int) n.data)) || (!checkBST(n.right, (int) n.data, max)) ){ //有false就返回false
 			return false;
-		}
+		}  
 		return true;
 	}
 }

@@ -7,6 +7,7 @@ import Ch4.TreesAndGraphs.Ch4_2_CheckRoute.State;
 public class TreeNode {
 	public TreeNode left = null;
 	public TreeNode right = null;
+	public TreeNode parent = null;
 	Object data;
 	State state;
 	
