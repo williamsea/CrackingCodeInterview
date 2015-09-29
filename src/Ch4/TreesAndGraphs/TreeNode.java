@@ -1,9 +1,14 @@
 package Ch4.TreesAndGraphs;
 
+import java.util.LinkedList;
+
+import Ch4.TreesAndGraphs.Ch4_2_CheckRoute.State;
+
 public class TreeNode {
 	TreeNode left = null;
 	TreeNode right = null;
 	Object data;
+	State state;
 	
 	TreeNode(Object val){
 		data = val;
@@ -19,6 +24,11 @@ public class TreeNode {
 		TreeNode rightChild = new TreeNode(val);
 		TreeNode node = this;
 		node.right = rightChild;
+	}
+	
+	LinkedList<TreeNode> getAdjacent(){
+		LinkedList<TreeNode> adjacents = new LinkedList<TreeNode>();
+		return adjacents;
 	}
 	
 }
