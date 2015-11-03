@@ -3,33 +3,33 @@ package Ch3.StacksAndQueues;
 import java.util.Stack;
 
 public class Ch3_5_MyQueue<T> {//Implemented by two stacks
-	Stack<T> oldStack, newStack;
+	Stack<T> values, temp;
 	
 	public Ch3_5_MyQueue(){
-		oldStack = new Stack<T>();
-		newStack = new Stack<T>();
+		values = new Stack<T>();
+		temp = new Stack<T>();
 	}
 	
 	private void shiftStacks(){
-		if(oldStack.isEmpty()){
-			while(!newStack.isEmpty()){
-				oldStack.push(newStack.pop());//move elements from newStack to OldStack
+		if(values.isEmpty()){ // IMPORTANT. Use up the values stack first, before adding new elements from temp
+			while(!temp.isEmpty()){
+				values.push(temp.pop());//move elements from newStack to OldStack
 			}
 		}
 	}
 	
 	public void push(T t){
-		newStack.push(t);
+		temp.push(t);
 	}
 	
 	public T pop(){
 		shiftStacks();
-		return oldStack.pop();
+		return values.pop();
 	}
 	
 	public T peek(){
 		shiftStacks();
-		return oldStack.peek();
+		return values.peek();
 	}
 	
 	public static void main(String[] args){
